@@ -1,31 +1,25 @@
 import socket
 
-# Creating Client Socket
-if __name__ == '__main__':
-    host = '127.0.0.1'
-    port = 8080
+def send_file(filename):
+    # Create a socket object
+    client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    # Connecting with Server
-    sock.connect((host, port))
+    # Define the server address and port
+    host = '127.0.0.1'  # Server's IP address
+    port = 12345  # Server's port
+    client_socket.connect((host, port))
 
-    while True:
+    # Open the file in binary mode and send it
+    with open(filename, 'rb') as file:
+        # Read and send the file in chunks
+        chunk = file.read(1024)
+        while chunk:
+            client_socket.send(chunk)
+            chunk = file.read(1024)
+        print("File sent successfully")
 
-        filename = input('Input filename you want to send or type "quit" to exit: ')
-        if filename == 'quit':
-            break
-        try:
-            # Reading file and sending data to server
-            fi = open(filename, "r")
-            data = fi.read()
-            if not data:
-                break
-            while data:
-                sock.send(str(data).encode())
-                data = fi.read()
-                # File is closed after data is sent
-            fi.close()
+    # Close the connection
+    client_socket.close()
 
-        except IOError:
-            print('You entered an invalid filename!\
-            Please enter a valid name')
+if __name__ == "__main__":
+    send_file('beer.jpg')  # File to send to the server

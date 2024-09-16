@@ -1,47 +1,35 @@
 import socket
 
-if __name__ == '__main__':
-    # Defining Socket
-    host = '127.0.0.1'
-    port = 8080
-    totalclient = int(input('Enter number of clients: '))
+def receive_file(filename):
+    # Create a socket object
+    server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    sock.bind((host, port))
-    sock.listen(totalclient)
-    # Establishing Connections
-    connections = []
-    print('Initiating clients')
-    for i in range(totalclient):
-        conn = sock.accept()
-        connections.append(conn)
-        print('Connected with client', i + 1)
+    # Get local machine name and bind to a port
+    host = '127.0.0.1'  # Server will run on localhost
+    port = 12345  # Any free port
+    server_socket.bind((host, port))
 
-    fileno = 0
-    idx = 0
-    for conn in connections:
-        # Receiving File Data
-        idx += 1
-        data = conn[0].recv(1024).decode()
+    # Start listening for incoming connections (up to 1 connection)
+    server_socket.listen(1)
+    print(f"Server listening on {host}:{port}")
 
-        if not data:
-            continue
-        # Creating a new file at server end and writing the data
-        filename = 'output' + str(fileno) + '.txt'
-        fileno = fileno + 1
-        fo = open(filename, "w")
-        while data:
-            if not data:
+    # Accept a connection from a client
+    client_socket, addr = server_socket.accept()
+    print(f"Got a connection from {addr}")
+
+    # Open a file in binary write mode to save the received data
+    with open(filename, 'wb') as file:
+        while True:
+            # Receive data in chunks
+            chunk = client_socket.recv(1024)
+            if not chunk:
                 break
-            else:
-                fo.write(data)
-                data = conn[0].recv(1024).decode()
+            file.write(chunk)
+        print(f"File received and saved as {filename}")
 
-        print()
-        print('Receiving file from client', idx)
-        print()
-        print('Received successfully! New filename is:', filename)
-        fo.close()
-        # Closing all Connections
-    for conn in connections:
-        conn[0].close()
+    # Close the connection
+    client_socket.close()
+    server_socket.close()
+
+if __name__ == "__main__":
+    receive_file('received_beer.jpg')  # File to save on the server
