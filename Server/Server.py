@@ -5,7 +5,7 @@ def receive_file(filename):
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
     # Get local machine name and bind to a port
-    host = '127.0.0.1'  # Server will run on localhost
+    host = socket.gethostbyname(socket.gethostname())  # Server will run on localhost
     port = 12345  # Any free port
     server_socket.bind((host, port))
 

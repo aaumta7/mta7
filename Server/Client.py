@@ -5,7 +5,7 @@ def send_file(filename):
     client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
     # Define the server address and port
-    host = '127.0.0.1'  # Server's IP address
+    host = '169.254.97.169'  # Server's IP address
     port = 12345  # Server's port
     client_socket.connect((host, port))
 
