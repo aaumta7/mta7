@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Mathilde\\Desktop\\Uni\\Semester7\\repos\\mta7\\Servertest\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{AB83B28E-18A8-2D20-3050-05804C5230CC}|Assembly-CSharp.csproj|c:\\users\\mathilde\\desktop\\uni\\semester7\\repos\\mta7\\servertest\\assets\\client.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB83B28E-18A8-2D20-3050-05804C5230CC}|Assembly-CSharp.csproj|solutionrelative:assets\\client.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Client.cs",
+              "DocumentMoniker": "C:\\Users\\Mathilde\\Desktop\\Uni\\Semester7\\repos\\mta7\\Servertest\\Assets\\Client.cs",
+              "RelativeDocumentMoniker": "Assets\\Client.cs",
+              "ToolTip": "C:\\Users\\Mathilde\\Desktop\\Uni\\Semester7\\repos\\mta7\\Servertest\\Assets\\Client.cs",
+              "RelativeToolTip": "Assets\\Client.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAcwCIAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-27T11:26:05.138Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
