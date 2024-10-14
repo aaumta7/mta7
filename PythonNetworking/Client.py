@@ -5,8 +5,10 @@ from PIL import Image
 
 
 
-def sendfile(ipAddress = "127.0.0.1", port = 12345,filePath = "./img.png"):
+def sendfile(ipAddress, port ,filePath):
 
+    print(ipAddress)
+    print(port)
     client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     client.connect((ipAddress, port))
 
@@ -25,4 +27,4 @@ def sendfile(ipAddress = "127.0.0.1", port = 12345,filePath = "./img.png"):
     client.send(data)
     client.close()
 
-sendfile(ipAddress = "127.0.0.1", port = 54321  , filePath = "./img.png")
+#sendfile(ipAddress = "169.254.140.187", port = 54321 , filePath = "./img.png")

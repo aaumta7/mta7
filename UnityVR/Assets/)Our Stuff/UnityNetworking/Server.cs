@@ -16,7 +16,7 @@ public class NewServer : MonoBehaviour
     bool open = false;
     TcpListener listener;
 
-    public const int port = 54321; // Replace with your desired port number
+    public const int port = 54321; // Standard for reciving C#
     IPAddress serverIP = getLocal();
     List<TcpClient> clients = new List<TcpClient>();
     void Start()
@@ -78,9 +78,10 @@ public class NewServer : MonoBehaviour
             throw;
         }
 
-        //Debug.Log(imgData);
         clients.Remove(client);
         client.Close();
+        //Find a way to recieve a lot of images
+
         File.WriteAllBytes(Environment.GetFolderPath(Environment.SpecialFolder.MyPictures) + "/ServerTest/img2.png", imgData);
         open = false;
         return;

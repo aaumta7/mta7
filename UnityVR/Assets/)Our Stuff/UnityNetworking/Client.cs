@@ -13,8 +13,8 @@ using UnityEngine;
 public class NewClient : MonoBehaviour
 {
 
-    public const int port = 12345; // Replace with your desired port number
-    public string serverIP;
+    public const int port = 12345; //Standard for recieving Python
+    public string serverIP = "127.0.0.1";
     public string prompt = "test";
 
     // Start is called before the first frame update
