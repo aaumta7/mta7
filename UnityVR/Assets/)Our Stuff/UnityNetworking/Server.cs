@@ -10,17 +10,26 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.WSA;
 
-public class NewServer : MonoBehaviour
+public class Server : MonoBehaviour
 {
-    bool open = false;
-    TcpListener listener;
 
-    public const int port = 54321; // Standard for reciving C#
+
+    public int port = 54321; // Standard for reciving C#
+
+
+
+
+    TcpListener listener;
     IPAddress serverIP = getLocal();
-    List<TcpClient> clients = new List<TcpClient>();
+
+
     void Start()
     {
+        //for local testing
+        serverIP = IPAddress.Parse("127.0.0.1");
+
         Debug.Log(serverIP.ToString());
         listener = new TcpListener(serverIP,port);
         listener.Start();
@@ -30,9 +39,6 @@ public class NewServer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!open ||true )
-        {
-            open = true;
             Task.Run(async () =>
             {
                 //Debug.Log("started async task");
@@ -43,7 +49,7 @@ public class NewServer : MonoBehaviour
                     handleClient(client);
                 }
             });
-        }
+        
        
 
     }
@@ -78,12 +84,11 @@ public class NewServer : MonoBehaviour
             throw;
         }
 
-        clients.Remove(client);
+        //clients.Remove(client);
         client.Close();
-        //Find a way to recieve a lot of images
 
-        File.WriteAllBytes(Environment.GetFolderPath(Environment.SpecialFolder.MyPictures) + "/ServerTest/img2.png", imgData);
-        open = false;
+        ImageUpdater.largest++;
+        File.WriteAllBytes(ImageUpdater.folderPath +"/"+ ImageUpdater.largest.ToString() + ".png", imgData);
         return;
     }
     static IPAddress getLocal()

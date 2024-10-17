@@ -10,7 +10,7 @@ using UnityEngine;
 
 
 
-public class NewClient : MonoBehaviour
+public class Client : MonoBehaviour
 {
 
     public const int port = 12345; //Standard for recieving Python
