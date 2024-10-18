@@ -8,7 +8,12 @@ public class PoseInteractor : MonoBehaviour
     public List<Rigidbody> rigidbodies;
     private void Start()
     {
-        rigidbodies.Add(gameObject.GetComponent<Rigidbody>());
+
+        Rigidbody[] childRBs = gameObject.GetComponentsInChildren<Rigidbody>();
+        for (int i = 0;  i < childRBs.Length; i++)
+        {
+            rigidbodies.Add(childRBs[i]);
+        }
 
         XRGrabInteractable grabbable = GetComponent<XRGrabInteractable>();
         grabbable.selectEntered.AddListener(EnablePoseChildren);
