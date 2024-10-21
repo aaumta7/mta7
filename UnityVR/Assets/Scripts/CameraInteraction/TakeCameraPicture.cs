@@ -6,8 +6,8 @@ public class SaveCameraView : MonoBehaviour
 {
     public Camera snapCam;
 
-    int resWidth = 256;
-    int resHeight = 256;
+    int resWidth = 512;//256;
+    int resHeight = 512;//256;
     private void Awake()
     {
         snapCam = GetComponent<Camera>();
@@ -38,6 +38,8 @@ public class SaveCameraView : MonoBehaviour
             byte[] bytes = snapshot.EncodeToPNG();
             System.IO.File.WriteAllBytes(ImageUpdater.folderPath +"/img.png", bytes);
             Debug.Log("worked");
+
+            GameObject.FindObjectOfType<Client>().sendImage();
             snapCam.gameObject.SetActive(false);
         }
         

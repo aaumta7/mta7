@@ -28,7 +28,7 @@ public class Server : MonoBehaviour
     void Start()
     {
         //for local testing
-        serverIP = IPAddress.Parse("127.0.0.1");
+        //serverIP = IPAddress.Parse("127.0.0.1");
 
         Debug.Log(serverIP.ToString());
         listener = new TcpListener(serverIP,port);
