@@ -3,7 +3,177 @@ guid: cba4545b67b620f42b0d4c4c450a2a5f
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: abajur
+    second: {fileID: 2100000, guid: 6bbf41d65bbaeab4dbbe35bb1ec50e8a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ampul
+    second: {fileID: 2100000, guid: 8396a98e5202f4c4cae973148de2c3b7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: beyaz
+    second: {fileID: 2100000, guid: 1a7d9b71ba4f72e4aafe6789f5c75da8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bitki kumu
+    second: {fileID: 2100000, guid: d74c0690ffd6d244db522354e5c05966, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "bitki ye\u015Fili1"
+    second: {fileID: 2100000, guid: 991e383872fe63e42901c3153256fd48, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "bitki ye\u015Fili2"
+    second: {fileID: 2100000, guid: fc898658d66a70a43a2f37099cabd299, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "bitki ye\u015Fili3"
+    second: {fileID: 2100000, guid: c049ed1c714b4a5479ccb0ab2b974a25, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: boyaetiketi
+    second: {fileID: 2100000, guid: 34d6b176a857b1c4a9113017a8c680ce, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cam
+    second: {fileID: 2100000, guid: 2aa26750478aa3944959a7d019b95b6e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: duvar
+    second: {fileID: 2100000, guid: b6f39937bb9ee2f4f898b9b9007a66b6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: elma
+    second: {fileID: 2100000, guid: 7f02c43a223957146bc1ad514d49f053, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "elmasap\u0131"
+    second: {fileID: 2100000, guid: 5bfc965003e8f984fa8addb61fb7b612, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: k_ayak
+    second: {fileID: 2100000, guid: 2fd3735b1432a7046981e9c062d8dd57, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: koyumavi
+    second: {fileID: 2100000, guid: 005f20b4f077ade49ba803535c11b55d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "kuma\u015F"
+    second: {fileID: 2100000, guid: 213cda7e29840ab489175f1ce36902a8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "k\u0131rm\u0131z\u0131 boya"
+    second: {fileID: 2100000, guid: 1eae2659dec63614898dadbb9b66c163, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mavi boya
+    second: {fileID: 2100000, guid: d84cc3f234712fb428f886574fbc461b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metal
+    second: {fileID: 2100000, guid: 041a73ced8782c64292f84243a599e97, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mor boya
+    second: {fileID: 2100000, guid: fe0d82c691147814d8a30594ddf5e88e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pencere
+    second: {fileID: 2100000, guid: f556691d6bb4b054b9e699a902f05803, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: perde
+    second: {fileID: 2100000, guid: 6f6b89995ada99144a3c72cbbe4c7a44, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "saks\u0131"
+    second: {fileID: 2100000, guid: 5df495839554d274ab5c505b1116350d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sandalye koltuk
+    second: {fileID: 2100000, guid: 5725120ce2bca1f4f998fed8b62bacf6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sandalye tahta
+    second: {fileID: 2100000, guid: bcacb9b5aa6365c468efef29b561f8aa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "sar\u0131 boya"
+    second: {fileID: 2100000, guid: 7780475dddbf6cd4ab38df3c9b418133, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sehpa
+    second: {fileID: 2100000, guid: 13139281b7df87e42b9f3c2f6715a208, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: siyah_boya
+    second: {fileID: 2100000, guid: 38b319f0b1d50264d9b4712a989f6fba, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tablo
+    second: {fileID: 2100000, guid: 2f116954ca552704a900816c3aee405f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tahta
+    second: {fileID: 2100000, guid: 69085e501bea0d842b72dd0acc0c2a0a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tahtapalet
+    second: {fileID: 2100000, guid: 890b70c56a60554448c5e7c46d79a323, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: vazo
+    second: {fileID: 2100000, guid: 748b813c556658140b60d7872fc71b2e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "ye\u015Fil boya"
+    second: {fileID: 2100000, guid: 29cbe5d52dae10a469f0c2216196bc27, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: zemin
+    second: {fileID: 2100000, guid: db9a199bc0d65d447850ed1ab664a27f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "\xE7\xF6p kutusu"
+    second: {fileID: 2100000, guid: aa7a46cd7b076c444a34e4994dbcac32, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
