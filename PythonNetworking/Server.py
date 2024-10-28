@@ -1,7 +1,7 @@
 import io
 import socket
 from PIL import Image
-from NewClient import sendfile
+from Client import sendfile
 import os.path
 
 chunkSize = 32768
@@ -40,9 +40,11 @@ while True:
     image.save("img.png")
     print("ping")
 
-    path = #INSERT STABLE DIFFUSION FUNCTION HERE
+    #path = #INSERT STABLE DIFFUSION FUNCTION HERE
 
-    if os.path.isfile(path):
+    if os.path.isfile("img.png"):
         print(address)
-        sendfile(address[0],54321,path)
+        sendfile(address[0],54321,"img.png")
         print ("pong")
+    else:
+        print(":(")
