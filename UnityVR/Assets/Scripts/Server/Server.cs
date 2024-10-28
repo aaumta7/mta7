@@ -1,4 +1,3 @@
-using Microsoft.Unity.VisualStudio.Editor;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -10,7 +9,6 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
-using UnityEngine.WSA;
 
 public class Server : MonoBehaviour
 {
@@ -87,8 +85,8 @@ public class Server : MonoBehaviour
         //clients.Remove(client);
         client.Close();
 
-        ImageUpdater.largest++;
-        File.WriteAllBytes(ImageUpdater.folderPath +"/"+ ImageUpdater.largest.ToString() + ".png", imgData);
+        VariableHandler.largest++;
+        File.WriteAllBytes(VariableHandler.imageFolderPath +"/"+ VariableHandler.largest.ToString() + ".png", imgData);
         return;
     }
     static IPAddress getLocal()

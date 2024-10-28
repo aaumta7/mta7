@@ -1,7 +1,4 @@
-using Microsoft.Unity.VisualStudio.Editor;
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net.Sockets;
@@ -14,13 +11,13 @@ public class Client : MonoBehaviour
 {
 
     public const int port = 12345; //Standard for recieving Python
-    public string serverIP = "127.0.0.1";
+    public string serverIP;
     public string prompt = "test";
 
     // Start is called before the first frame update
     void Start()
     {
-
+        serverIP =  File.ReadAllText(VariableHandler.ipFile);
 
     }
 

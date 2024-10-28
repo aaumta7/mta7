@@ -36,7 +36,7 @@ public class SaveCameraView : MonoBehaviour
             RenderTexture.active = snapCam.targetTexture;
             snapshot.ReadPixels(new Rect(0, 0, resWidth, resHeight), 0, 0);
             byte[] bytes = snapshot.EncodeToPNG();
-            System.IO.File.WriteAllBytes(ImageUpdater.folderPath +"/img.png", bytes);
+            System.IO.File.WriteAllBytes(VariableHandler.imageFolderPath +"/img.png", bytes);
             Debug.Log("worked");
 
             GameObject.FindObjectOfType<Client>().sendImage();
