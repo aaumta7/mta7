@@ -244,6 +244,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidbodies: []
+  kinematicRotation: 1
 --- !u!136 &1671338060113975385
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1484,6 +1485,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidbodies: []
+  kinematicRotation: 1
 --- !u!136 &8214800099257404791
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1963,6 +1965,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidbodies: []
+  kinematicRotation: 1
 --- !u!136 &4618730240966966965
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2307,6 +2310,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidbodies: []
+  kinematicRotation: 1
 --- !u!136 &7714818593459034468
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2993,6 +2997,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidbodies: []
+  kinematicRotation: 1
 --- !u!136 &6328148258454330072
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3279,6 +3284,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidbodies: []
+  kinematicRotation: 1
 --- !u!136 &4471281905227749808
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3559,6 +3565,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidbodies: []
+  kinematicRotation: 1
 --- !u!65 &4395086320922162724
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3831,6 +3838,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidbodies: []
+  kinematicRotation: 1
 --- !u!65 &668328055363129071
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4063,6 +4071,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidbodies: []
+  kinematicRotation: 1
 --- !u!136 &131486338764783651
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4349,6 +4358,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidbodies: []
+  kinematicRotation: 1
 --- !u!136 &5467524409881606268
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4629,6 +4639,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidbodies: []
+  kinematicRotation: 1
 --- !u!135 &5192731136703332127
 SphereCollider:
   m_ObjectHideFlags: 0
