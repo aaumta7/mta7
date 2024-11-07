@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4864010589682340273}
   - component: {fileID: 2387195212860281}
   - component: {fileID: 8255797954770876165}
+  - component: {fileID: 8969727872047111149}
   m_Layer: 0
   m_Name: painting_holfder_pCube96
   m_TagString: Untagged
@@ -83,6 +84,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &8969727872047111149
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 448799554597500602}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 538143956198822464, guid: ed88f95ca04c26948924d089028a4298, type: 3}
 --- !u!1 &1862670659035368026
 GameObject:
   m_ObjectHideFlags: 0
@@ -94,6 +117,7 @@ GameObject:
   - component: {fileID: 2884742607105762483}
   - component: {fileID: 3007810254714353226}
   - component: {fileID: 8481332621263688108}
+  - component: {fileID: 2623026702482296199}
   m_Layer: 0
   m_Name: painting_holfder_pCube95
   m_TagString: Untagged
@@ -166,6 +190,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &2623026702482296199
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1862670659035368026}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -927844705618461418, guid: ed88f95ca04c26948924d089028a4298, type: 3}
 --- !u!1 &5408543623348893938
 GameObject:
   m_ObjectHideFlags: 0
@@ -177,7 +223,6 @@ GameObject:
   - component: {fileID: 7072728657722859425}
   - component: {fileID: 7317671582345237296}
   - component: {fileID: 184215622909614528}
-  - component: {fileID: 388130650596021654}
   m_Layer: 0
   m_Name: Easel
   m_TagString: Untagged
@@ -384,28 +429,6 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
---- !u!64 &388130650596021654
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5408543623348893938}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!1 &7787049807070364082
 GameObject:
   m_ObjectHideFlags: 0
@@ -417,6 +440,7 @@ GameObject:
   - component: {fileID: 6891883603654696177}
   - component: {fileID: 584760579415758214}
   - component: {fileID: 7996973287927707439}
+  - component: {fileID: 5429799513638520698}
   m_Layer: 0
   m_Name: pCube92_painting_holfder
   m_TagString: Untagged
@@ -489,6 +513,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &5429799513638520698
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7787049807070364082}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4748208712783854972, guid: ed88f95ca04c26948924d089028a4298, type: 3}
 --- !u!1 &8266601938634581664
 GameObject:
   m_ObjectHideFlags: 0
@@ -500,6 +546,7 @@ GameObject:
   - component: {fileID: 5699684943757956393}
   - component: {fileID: 2354279276980817300}
   - component: {fileID: 7158431268719408785}
+  - component: {fileID: 6524156176794041750}
   m_Layer: 0
   m_Name: painting_holfder_pCube94
   m_TagString: Untagged
@@ -572,6 +619,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &6524156176794041750
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8266601938634581664}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7596677488976688557, guid: ed88f95ca04c26948924d089028a4298, type: 3}
 --- !u!1 &8609175790657500273
 GameObject:
   m_ObjectHideFlags: 0
@@ -583,6 +652,7 @@ GameObject:
   - component: {fileID: 8286560250968123789}
   - component: {fileID: 5831172627945697548}
   - component: {fileID: 3812607540928402058}
+  - component: {fileID: 7365179647637954568}
   m_Layer: 0
   m_Name: painting_holfder_pCube93
   m_TagString: Untagged
@@ -655,3 +725,25 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &7365179647637954568
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8609175790657500273}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -6866366222089584707, guid: ed88f95ca04c26948924d089028a4298, type: 3}
