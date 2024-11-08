@@ -16,3 +16,6 @@ After this, open the install.bat file, and insert your huggingface.co oauth toke
 Finally, choose between the run.bat and runlocally.bat files.
 
 This will give you a command face with an ip for the SD models. Insert this inside the game in unity, and thereafter pick up the camera, pose the model, and press the trigger.
+
+
+run this `New-NetFirewallRule -DisplayName "Allow Inbound Port 54321" -Direction Inbound -Protocol TCP -LocalPort 54321 -Action Allow` to open port
