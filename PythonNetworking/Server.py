@@ -1,50 +1,75 @@
-import io
 import socket
+import sys
 from PIL import Image
-from Client import sendfile
-import os.path
+import io
+import os
 
-chunkSize = 32768
-serverIP = socket.gethostbyname(socket.gethostname())
-
-server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-server.bind((serverIP,12345));
-
-print("now listening on: " + serverIP)
-
-while True:
-    server.listen()
-    conn,address = server.accept()
-
-    print("Accepted from ip: " + address[0])
-    prompt = conn.recv(128)
-
-    print(prompt)
-
-    lengthbytes = conn.recv(4)
-    imagelength = int.from_bytes(lengthbytes, byteorder='little')
+# Define constants
+RECEIVE_PORT = 12345
+SEND_PORT = 54321
+CHUNK_SIZE = 32768
 
 
-    print("getting image")
-    img_data = b''
+def send_image(ip_address, image_path):
+
+
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as client:
+        client.connect((ip_address, SEND_PORT))
+
+        with open(image_path, 'rb') as f:
+            image_data = f.read()
+
+        data_length = len(image_data).to_bytes(4, byteorder='little')
+        data = data_length + image_data
+        client.sendall(data)
+
+
+def receive_and_process_image(client_socket):
+
+    print("Accepted connection")
+
+    prompt_bytes = client_socket.recv(2048)
+
+
+    length_bytes = client_socket.recv(4)
+    image_length = int.from_bytes(length_bytes, byteorder='little')
+
     received_bytes = 0
-    while received_bytes < imagelength:
-        chunk = conn.recv(chunkSize)
-        img_data += chunk
+    image_data = b''
+    while received_bytes < image_length:
+        chunk = client_socket.recv(CHUNK_SIZE)
+        image_data += chunk
         received_bytes += len(chunk)
-        print("got chunk")
+
+    with open(f"img.png", 'wb') as f:
+        f.write(image_data)
 
 
-    image = Image.open(io.BytesIO(img_data))
 
-    image.save("img.png")
-    print("ping")
+def run_server(server_ip):
+    server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    server_socket.bind((server_ip, RECEIVE_PORT))
+    server_socket.listen()
 
-    #path = #INSERT STABLE DIFFUSION FUNCTION HERE
+    print(f"Server listening on {server_ip}:{RECEIVE_PORT}")
 
-    if os.path.isfile("img.png"):
-        print(address)
-        sendfile(address[0],54321,"img.png")
-        print ("pong")
+    while True:
+        conn, address = server_socket.accept()
+        receive_and_process_image(conn)
+        send_image(address[0], f"img.png")
+
+
+if __name__ == "__main__":
+    if len(sys.argv) != 2:
+        print("Usage: python script.py [remote | local]")
+        sys.exit(1)
+
+    if sys.argv[1] == "remote":
+        server_ip = socket.gethostbyname(socket.gethostname())
+    elif sys.argv[1] == "local":
+        server_ip = "127.0.0.1"
     else:
-        print(":(")
+        print(f"Invalid argument: {sys.argv[1]}")
+        sys.exit(1)
+
+    run_server(server_ip)
