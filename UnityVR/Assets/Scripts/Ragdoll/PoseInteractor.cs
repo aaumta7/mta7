@@ -6,6 +6,8 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class PoseInteractor : MonoBehaviour
 {
     public List<Rigidbody> rigidbodies;
+    public bool kinematicRotation = false;
+
     private void Start()
     {
 
@@ -25,6 +27,12 @@ public class PoseInteractor : MonoBehaviour
         for (int i = 0; i < rigidbodies.Count; i++)
         {
             rigidbodies[i].constraints = RigidbodyConstraints.None;
+            if (kinematicRotation == false) { return; }
+
+            if (rigidbodies[i] != this.GetComponent<Rigidbody>())
+            {
+                rigidbodies[i].isKinematic = true;
+            }
         }
     }
 
@@ -34,6 +42,12 @@ public class PoseInteractor : MonoBehaviour
         for (int i = 0; i < rigidbodies.Count; i++)
         {
             rigidbodies[i].constraints = RigidbodyConstraints.FreezeRotation;
+            if (kinematicRotation == false) { return; }
+
+            if (rigidbodies[i] != this.GetComponent<Rigidbody>())
+            {
+                rigidbodies[i].isKinematic = false;
+            }
         }
     }
 

@@ -27,23 +27,27 @@ public class DrawSkeleton : MonoBehaviour
 
     public Transform[] limbs;
     public LineRenderer[] skeleton;
-    List<GameObject> skelPoints = new List<GameObject>();
+    GameObject[] skelPoints = new GameObject[18];
 
     // Start is called before the first frame update
     void Start()
     {
         // Adjusting settings for Rendering
-        foreach (LineRenderer l in skeleton)
+        foreach (LineRenderer bone in skeleton)
         {
-            l.widthCurve = lineWidth;
-            l.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
-            l.positionCount = 2;
+            bone.widthCurve = lineWidth;
+            bone.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
+            bone.positionCount = 2;
         }
-        ConnectAll();
     }
 
-    private void ConnectAll()
+    public void AssembleSkeleton()
     {
+        foreach (LineRenderer bone in skeleton)
+        {
+            bone.enabled = true;
+        }
+
         ConnectLimb(1, 2, 0);
         ConnectLimb(1, 5, 1);
         ConnectLimb(2, 3, 2);
@@ -62,13 +66,12 @@ public class DrawSkeleton : MonoBehaviour
         ConnectLimb(0, 15, 15);
         ConnectLimb(15, 17, 16);
 
-        foreach (Transform t in limbs)
+        for (int i = 0; i < limbs.Length; i++)
         {
-            GameObject point = Instantiate(skelePoint, t.position, Quaternion.identity);
-            skelPoints.Add(point);
+            GameObject point = Instantiate(skelePoint, limbs[i].position, Quaternion.identity);
+            skelPoints[i] = point;
         }
-        Debug.Log(skelPoints.Count);
-        for (int i = 0; i < skelPoints.Count; i++)
+        for (int i = 0; i < skelPoints.Length; i++)
         {
             skelPoints[i].GetComponent<MeshRenderer>().material.color = colors[i];
         }
@@ -87,9 +90,16 @@ public class DrawSkeleton : MonoBehaviour
         skeleton[i].colorGradient = gradient;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void DisassembleSkeleton()
     {
-        
+        foreach (LineRenderer bone in skeleton)
+        {
+            bone.enabled = false;
+        }
+
+        foreach (GameObject s in skelPoints)
+        {
+            Destroy(s);
+        }
     }
 }

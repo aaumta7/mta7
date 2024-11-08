@@ -5,6 +5,9 @@ using System;
 public class SaveCameraView : MonoBehaviour
 {
     public Camera snapCam;
+    private DrawSkeleton drawSkel;
+
+    public bool sendImageToServer = true;
 
     int resWidth = 512;//256;
     int resHeight = 512;//256;
@@ -31,6 +34,8 @@ public class SaveCameraView : MonoBehaviour
     {
         if (snapCam.gameObject.activeInHierarchy)
         {
+            drawSkel = FindObjectOfType<DrawSkeleton>();
+            drawSkel.AssembleSkeleton();
             Texture2D snapshot = new Texture2D(resWidth, resHeight, TextureFormat.RGB24, false);
             snapCam.Render();
             RenderTexture.active = snapCam.targetTexture;
@@ -39,7 +44,12 @@ public class SaveCameraView : MonoBehaviour
             System.IO.File.WriteAllBytes(VariableHandler.imageFolderPath +"/img.png", bytes);
             Debug.Log("worked");
 
-            GameObject.FindObjectOfType<Client>().sendImage();
+            if (sendImageToServer)
+            {
+                GameObject.FindObjectOfType<Client>().sendImage();
+            }
+            drawSkel.DisassembleSkeleton();
+            GameObject.FindObjectOfType<UpdateCanvas>().PaintNewImage(bytes, resWidth, resHeight);
             snapCam.gameObject.SetActive(false);
         }
         
