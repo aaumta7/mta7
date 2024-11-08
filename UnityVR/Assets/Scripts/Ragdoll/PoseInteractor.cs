@@ -7,6 +7,8 @@ public class PoseInteractor : MonoBehaviour
 {
     public List<Rigidbody> rigidbodies;
     public bool kinematicRotation = false;
+    public MeshRenderer limbVis;
+    Color hoverColor = new Color(0.745f, 0.917f, 1.0f); // Light blue hover color
 
     private void Start()
     {
@@ -20,6 +22,8 @@ public class PoseInteractor : MonoBehaviour
         XRGrabInteractable grabbable = GetComponent<XRGrabInteractable>();
         grabbable.selectEntered.AddListener(EnablePoseChildren);
         grabbable.selectExited.AddListener(DisablePoseChildren);
+        grabbable.hoverEntered.AddListener(OnHoverLimb);
+        grabbable.hoverExited.AddListener(OnHoverLimbExit);
     }
 
     public void EnablePoseChildren(SelectEnterEventArgs args)
@@ -49,6 +53,18 @@ public class PoseInteractor : MonoBehaviour
                 rigidbodies[i].isKinematic = false;
             }
         }
+    }
+
+    public void OnHoverLimb(HoverEnterEventArgs args)
+    {
+        if (limbVis == null) { return; }
+        limbVis.material.color = hoverColor;
+    }
+
+    public void OnHoverLimbExit(HoverExitEventArgs args)
+    {
+        if (limbVis == null) { return; }
+        limbVis.material.color = Color.white;
     }
 
     IEnumerable WaitForSpring()

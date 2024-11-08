@@ -379,6 +379,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidbodies: []
   kinematicRotation: 1
+  limbVis: {fileID: 7776272376676478128}
 --- !u!136 &1671338060113975385
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3270,6 +3271,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidbodies: []
   kinematicRotation: 1
+  limbVis: {fileID: 7908939910387129206}
 --- !u!136 &8214800099257404791
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3884,6 +3886,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidbodies: []
   kinematicRotation: 1
+  limbVis: {fileID: 3244930352472437670}
 --- !u!136 &4618730240966966965
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4497,6 +4500,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidbodies: []
   kinematicRotation: 1
+  limbVis: {fileID: 4151896494544972070}
 --- !u!136 &7714818593459034468
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -5495,6 +5499,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidbodies: []
   kinematicRotation: 1
+  limbVis: {fileID: 492105444711650979}
 --- !u!136 &6328148258454330072
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -5564,6 +5569,18 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!23 &375374088293725389 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -1982349570516358137, guid: 2dcc9e076a5b41d41920a2728383d485,
+    type: 3}
+  m_PrefabInstance: {fileID: 7010098213396633802}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &492105444711650979 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -1757370993631195543, guid: 2dcc9e076a5b41d41920a2728383d485,
+    type: 3}
+  m_PrefabInstance: {fileID: 7010098213396633802}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &597879399046866504 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -1655979915781259646, guid: 2dcc9e076a5b41d41920a2728383d485,
@@ -5794,6 +5811,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidbodies: []
   kinematicRotation: 1
+  limbVis: {fileID: 1325953343683981638}
 --- !u!136 &4471281905227749808
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -5863,6 +5881,12 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!23 &1325953343683981638 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 8299681824953411980, guid: 2dcc9e076a5b41d41920a2728383d485,
+    type: 3}
+  m_PrefabInstance: {fileID: 7010098213396633802}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2576682880428037422 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4794900125881535972, guid: 2dcc9e076a5b41d41920a2728383d485,
@@ -6075,6 +6099,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidbodies: []
   kinematicRotation: 1
+  limbVis: {fileID: 375374088293725389}
 --- !u!65 &4395086320922162724
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6145,6 +6170,12 @@ CharacterJoint:
 --- !u!4 &2778426335829488912 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4051503368140509734, guid: 2dcc9e076a5b41d41920a2728383d485,
+    type: 3}
+  m_PrefabInstance: {fileID: 7010098213396633802}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &2797919652299496790 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 5160256793183389084, guid: 2dcc9e076a5b41d41920a2728383d485,
     type: 3}
   m_PrefabInstance: {fileID: 7010098213396633802}
   m_PrefabAsset: {fileID: 0}
@@ -6348,6 +6379,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidbodies: []
   kinematicRotation: 1
+  limbVis: {fileID: 2797919652299496790}
 --- !u!65 &668328055363129071
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6581,6 +6613,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidbodies: []
   kinematicRotation: 1
+  limbVis: {fileID: 5469397277209228548}
 --- !u!136 &131486338764783651
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -6650,6 +6683,18 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!23 &3667144248922044665 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -3194020338421325773, guid: 2dcc9e076a5b41d41920a2728383d485,
+    type: 3}
+  m_PrefabInstance: {fileID: 7010098213396633802}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &5469397277209228548 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 3075937617889471950, guid: 2dcc9e076a5b41d41920a2728383d485,
+    type: 3}
+  m_PrefabInstance: {fileID: 7010098213396633802}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5478947807410806484 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -5962206050911582690, guid: 2dcc9e076a5b41d41920a2728383d485,
@@ -6803,6 +6848,12 @@ Transform:
 --- !u!4 &8634728798146709951 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -7594081378161553035, guid: 2dcc9e076a5b41d41920a2728383d485,
+    type: 3}
+  m_PrefabInstance: {fileID: 7010098213396633802}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &8702611428111780685 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 1841195800667935623, guid: 2dcc9e076a5b41d41920a2728383d485,
     type: 3}
   m_PrefabInstance: {fileID: 7010098213396633802}
   m_PrefabAsset: {fileID: 0}
@@ -7018,6 +7069,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidbodies: []
   kinematicRotation: 1
+  limbVis: {fileID: 8702611428111780685}
 --- !u!136 &5467524409881606268
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -7299,6 +7351,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidbodies: []
   kinematicRotation: 1
+  limbVis: {fileID: 3667144248922044665}
 --- !u!135 &5192731136703332127
 SphereCollider:
   m_ObjectHideFlags: 0
