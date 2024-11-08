@@ -18,6 +18,7 @@ public class Client : MonoBehaviour
     void Start()
     {
         serverIP = File.ReadAllText(VariableHandler.ipFile);
+        VariableHandler.updateImages();
 
     }
 
