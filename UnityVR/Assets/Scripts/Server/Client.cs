@@ -17,24 +17,25 @@ public class Client : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        serverIP =  File.ReadAllText(VariableHandler.ipFile);
+        serverIP = File.ReadAllText(VariableHandler.ipFile);
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
     public void sendImage()
     {
         byte[] imgBytes = File.ReadAllBytes(Environment.GetFolderPath(Environment.SpecialFolder.MyPictures) + "/ServerTest/img.png");
 
         TcpClient client = new TcpClient();
-        client.Connect(serverIP, port);
+        client.Connect(serverIP.ToString(),port);
+        //client.Connect("127.0.0.1", port);
         NetworkStream stream = client.GetStream();
 
-        stream.Write(PadString(prompt, 128));
+        stream.Write(PadString(prompt, 2048));
 
         byte[] lengthBytes = BitConverter.GetBytes(imgBytes.Length);
         byte[] dataToSend = lengthBytes.Concat(imgBytes).ToArray();
@@ -44,7 +45,7 @@ public class Client : MonoBehaviour
 
         stream.Close();
     }
-    public static byte[] PadString(string text,int len)
+    public static byte[] PadString(string text, int len)
     {
         byte[] padded = new byte[len];
         byte[] init = Encoding.UTF8.GetBytes(text);
