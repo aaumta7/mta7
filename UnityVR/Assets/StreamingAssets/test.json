@@ -1,0 +1,38 @@
+{
+  "Characters": [
+    {
+      "Name": "Samantha",
+      "Prompts": ["Pirate 1", "Pirate 2"],
+      "Emails": [
+        {
+          "Headline": "headline 1",
+          "Text": "this is the first email",
+          "Payment": 10.0,
+          "Requirement": "this is an optional requirement"
+        },
+        {
+          "Headline": "headline 2",
+          "Text": "this is the second email",
+          "Payment": 15.0
+        }
+      ]
+    },
+    {
+      "Name": "Daniel",
+      "Prompts": ["Ninja 1", "Ninja 2"],
+      "Emails": [
+        {
+          "Headline": "headline 1",
+          "Text": "this is the first email",
+          "Payment": 10.0,
+          "Requirement": "this is an optional requirement"
+        },
+        {
+          "Headline": "headline 2",
+          "Text": "this is the second email",
+          "Payment": 15.0
+        }
+      ]
+    }
+  ]
+}
