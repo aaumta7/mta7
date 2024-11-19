@@ -2,10 +2,39 @@
   "Characters": [
     {
       "Name": "Samantha",
-      "Prompts": ["Pirate 1", "Pirate 2"],
+      "Progress": 0,
+      "Prompts": [ "Pirate 1", "Pirate 2", "Pirate 3", "Pirate 4" ],
       "Emails": [
         {
           "Headline": "headline 1",
+          "Text": "this is the first email",
+          "Payment": 10.0,
+          "Requirement": "this is an optional requirement"
+        },
+        {
+          "Headline": "headline 1",
+          "Text": "this is the second email",
+          "Payment": 15.0
+        },
+        {
+          "Headline": "headline 1",
+          "Text": "this is the third email",
+          "Payment": 15.0
+        },
+        {
+          "Headline": "headline 1",
+          "Text": "this is the fourth email",
+          "Payment": 15.0
+        }
+      ]
+    },
+    {
+      "Name": "Daniel",
+      "Progress": 0,
+      "Prompts": [ "Ninja 1", "Ninja 2", "Ninja 3", "Ninja 4" ],
+      "Emails": [
+        {
+          "Headline": "headline 2",
           "Text": "this is the first email",
           "Payment": 10.0,
           "Requirement": "this is an optional requirement"
@@ -14,22 +43,43 @@
           "Headline": "headline 2",
           "Text": "this is the second email",
           "Payment": 15.0
+        },
+        {
+          "Headline": "headline 2",
+          "Text": "this is the third email",
+          "Payment": 15.0
+        },
+        {
+          "Headline": "headline 2",
+          "Text": "this is the fourth email",
+          "Payment": 15.0
         }
       ]
     },
     {
-      "Name": "Daniel",
-      "Prompts": ["Ninja 1", "Ninja 2"],
+      "Name": "Lucas",
+      "Progress": 0,
+      "Prompts": [ "Chair 1", "Chair 2", "Chair 3", "Chair 4" ],
       "Emails": [
         {
-          "Headline": "headline 1",
+          "Headline": "headline 3",
           "Text": "this is the first email",
           "Payment": 10.0,
           "Requirement": "this is an optional requirement"
         },
         {
-          "Headline": "headline 2",
+          "Headline": "headline 3",
           "Text": "this is the second email",
+          "Payment": 15.0
+        },
+        {
+          "Headline": "headline 3",
+          "Text": "this is the third email",
+          "Payment": 15.0
+        },
+        {
+          "Headline": "headline 3",
+          "Text": "this is the fourth email",
           "Payment": 15.0
         }
       ]
