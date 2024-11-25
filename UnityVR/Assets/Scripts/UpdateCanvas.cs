@@ -6,9 +6,9 @@ using System.IO;
 public class UpdateCanvas : MonoBehaviour
 {
 
+    float timer = 0;
     private void Update()
     {
-        float timer = 5;
         timer += Time.deltaTime;
         if (timer >= 5)
         {
