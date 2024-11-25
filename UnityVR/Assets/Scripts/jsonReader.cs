@@ -14,13 +14,16 @@ public class jsonReader : MonoBehaviour
     List<Character> currEmails;
     public TMP_Text headline,fromline,body,prompt,requirements,payment;
     Character curr;
+    bool sam = false, dan = false;
     
+
     List<Character> newEmails()
     {
         if (jsonData.Characters.Length==0)
         {
             return new List<Character>();
         }
+
 
         int emails = 0;
         List<Character> characters = new List<Character>() ;
@@ -30,8 +33,9 @@ public class jsonReader : MonoBehaviour
             do
             {
                 int rnd = random.Next(jsonData.Characters.Length);
-                if (!characters.Contains(jsonData.Characters[rnd]))
+                if (!characters.Contains(jsonData.Characters[rnd]) && jsonData.Characters[rnd].Name != "Samantha and Daniel")
                 {
+                    
                     characters.Add(jsonData.Characters[rnd]);
                     emails++;
                 }
@@ -40,6 +44,15 @@ public class jsonReader : MonoBehaviour
         else
         {
             characters = jsonData.Characters.ToList();
+        }
+
+
+        if (sam && dan)
+        {
+            characters.Add(jsonData.Characters[jsonData.Characters.Length - 1]);
+            List<Character> c = jsonData.Characters.ToList();
+            c.Remove(jsonData.Characters[jsonData.Characters.Length-1]);
+            jsonData.Characters = c.ToArray();
         }
 
         return characters;
@@ -69,9 +82,36 @@ public class jsonReader : MonoBehaviour
             curr = currEmails[index - 1];
         }
     }
-    void displayEmail()
+    public void accept()
     {
-        
+        if (curr.Name == "Sam" && curr.Progress == 1)
+        {
+            jsonData.Characters[jsonData.Characters.ToList().IndexOf(curr)].Name = "Samantha";
+        }
+        if (curr.Name == "Samantha" && curr.Progress == 3)
+        {
+            sam = true;
+        }
+        if (curr.Name == "Daniel" && curr.Progress == 3)
+        {
+            dan = true;
+        }
+
+        int prog = jsonData.Characters[jsonData.Characters.ToList().IndexOf(curr)].Progress;
+        prog++;
+        jsonData.Characters[jsonData.Characters.ToList().IndexOf(curr)].Progress = prog;
+        if (prog == jsonData.Characters[jsonData.Characters.ToList().IndexOf(curr)].Emails.Length)
+        {
+            List<Character> c = jsonData.Characters.ToList();
+            c.Remove(curr);
+
+            jsonData.Characters = c.ToArray();
+        }
+
+        load();
+    }
+    void displayEmail()
+    {      
         int index = jsonData.Characters.ToList().IndexOf(curr);
         System.Random random = new System.Random();
         int progress = jsonData.Characters[index].Progress;
@@ -91,24 +131,6 @@ public class jsonReader : MonoBehaviour
         }
         payment.text = curr.Emails[progress].Payment.ToString() + " grams of parmesan";
     }
-    public void accept()
-    {
-        int prog = jsonData.Characters[jsonData.Characters.ToList().IndexOf(curr)].Progress;
-        prog++;
-        jsonData.Characters[jsonData.Characters.ToList().IndexOf(curr)].Progress = prog;
-        if (prog == jsonData.Characters[jsonData.Characters.ToList().IndexOf(curr)].Emails.Length)
-        {
-            List<Character> c = jsonData.Characters.ToList();
-            c.Remove(curr);
-            foreach (Character ch in c)
-            {
-                Debug.Log(ch.Name);
-            }
-            jsonData.Characters = c.ToArray();
-        }
-        
-        load();
-    }
     void load()
     {
         currEmails = newEmails();
@@ -117,11 +139,8 @@ public class jsonReader : MonoBehaviour
             finish();
             return;
         }
-        System.Random random = new System.Random();
-
         curr = currEmails[0];
         displayEmail();
-
     }
 
     void Start()
@@ -150,6 +169,7 @@ public class jsonReader : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.L)) 
         {
             accept();
+                Debug.Log(sam.ToString() + dan.ToString());
         }
     }
 

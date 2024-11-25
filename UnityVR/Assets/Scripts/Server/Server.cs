@@ -86,7 +86,7 @@ public class Server : MonoBehaviour
         client.Close();
 
         VariableHandler.largest++;
-        File.WriteAllBytes(VariableHandler.imageFolderPath +"/"+ VariableHandler.largest.ToString() + ".png", imgData);
+        File.WriteAllBytes(VariableHandler.imageFolderPath +"/Images/"+ VariableHandler.largest.ToString() + ".png", imgData);
         return;
     }
     static IPAddress getLocal()

@@ -5,13 +5,17 @@ using System.IO;
 
 public class UpdateCanvas : MonoBehaviour
 {
-    
 
-    public void PaintNewImage(byte[] texture, int w, int h)
+    private void Update()
     {
-
-        Texture2D tex = new Texture2D(w, h);
-        tex.LoadImage(texture);
-        gameObject.GetComponent<MeshRenderer>().material.mainTexture = tex;
+        float timer = 5;
+        timer += Time.deltaTime;
+        if (timer >= 5)
+        {
+            VariableHandler.updateImages();
+            gameObject.GetComponent<MeshRenderer>().material.mainTexture = VariableHandler.getNewestImage();
+            timer = 0;
+        }
     }
+
 }
