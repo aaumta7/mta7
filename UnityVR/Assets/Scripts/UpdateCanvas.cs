@@ -13,7 +13,7 @@ public class UpdateCanvas : MonoBehaviour
         if (timer >= 5)
         {
             VariableHandler.updateImages();
-            gameObject.GetComponent<MeshRenderer>().material.mainTexture = VariableHandler.getNewestImage();
+            gameObject.GetComponent<MeshRenderer>().material.mainTexture = VariableHandler.getNewestImage(5)[0];
             timer = 0;
         }
     }

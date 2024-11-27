@@ -24,16 +24,21 @@ public static class VariableHandler
             }
         }
     }
-    public static Texture2D getNewestImage()
-    { 
+    public static List<Texture2D> getNewestImage(int num)
+    {
+        List<Texture2D> texs = new List<Texture2D>();
+        for (int i = 0; i <= num; i++)
+        {
+            int index = largest - i;
+            if (index < 1) { return texs; }
 
-        string path = imageFolderPath + "/Images/" + largest.ToString() + ".png";
-        // Load the texture from the specified path
-        byte[] fileData = File.ReadAllBytes(path);
-        Texture2D tex = new Texture2D(2, 2);
-        tex.LoadImage(fileData);
-
-
-        return tex;
+            string path = imageFolderPath + "/Images/" + index.ToString() + ".png";
+            // Load the texture from the specified path
+            byte[] fileData = File.ReadAllBytes(path);
+            Texture2D tex = new Texture2D(2, 2);
+            tex.LoadImage(fileData);
+            texs.Add(tex);
+        }
+        return texs;
     }
 }
