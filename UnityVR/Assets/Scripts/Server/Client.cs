@@ -1,6 +1,9 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
+using System.Net.Security;
 using System.Net.Sockets;
 using System.Text;
 using UnityEngine;
@@ -10,14 +13,15 @@ using UnityEngine;
 public class Client : MonoBehaviour
 {
 
-    public const int port = 12345; //Standard for recieving Python
+    public const int port = 12345; //Standard for sending to Python
     public string serverIP;
-    public string prompt = "test";
+    public string prompt = "undead anime girl, zombie, hot, ghoul, sexy";
 
     // Start is called before the first frame update
     void Start()
     {
         serverIP = File.ReadAllText(VariableHandler.ipFile);
+        Debug.Log(serverIP);
         VariableHandler.updateImages();
 
     }
@@ -29,10 +33,11 @@ public class Client : MonoBehaviour
     }
     public void sendImage()
     {
-        byte[] imgBytes = File.ReadAllBytes(Environment.GetFolderPath(Environment.SpecialFolder.MyPictures) + "/ServerTest/img.png");
+        byte[] imgBytes = File.ReadAllBytes(VariableHandler.imageFolderPath+"/img.png");
 
         TcpClient client = new TcpClient();
-        client.Connect(serverIP.ToString(),port);
+
+        client.Connect(serverIP,port);
         //client.Connect("127.0.0.1", port);
         NetworkStream stream = client.GetStream();
 
