@@ -87,6 +87,8 @@ public class Server : MonoBehaviour
 
         VariableHandler.largest++;
         File.WriteAllBytes(VariableHandler.imageFolderPath +"/Images/"+ VariableHandler.largest.ToString() + ".png", imgData);
+        VariableHandler.updateImages();
+        GameObject.FindObjectOfType<UpdateCanvas>().PaintImage();
         return;
     }
     static IPAddress getLocal()

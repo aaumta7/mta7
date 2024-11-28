@@ -16,7 +16,9 @@ public class UpdateCanvas : MonoBehaviour
     public void PaintImage()
     {
         VariableHandler.updateImages();
-        finishedPaintings = VariableHandler.getNewestImage(5);
+
+        // Parameter should be -1 from amount of frames
+        finishedPaintings = VariableHandler.getNewestImage(11);
         finishedPaintings.Reverse();
         UpdateCanvases();
     }
