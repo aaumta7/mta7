@@ -5,17 +5,27 @@ using System.IO;
 
 public class UpdateCanvas : MonoBehaviour
 {
+    public MeshRenderer[] frames;
+    public List<Texture2D> finishedPaintings = new List<Texture2D>();
 
-    float timer = 0;
-    private void Update()
+    private void Start()
     {
-        timer += Time.deltaTime;
-        if (timer >= 5)
-        {
-            VariableHandler.updateImages();
-            gameObject.GetComponent<MeshRenderer>().material.mainTexture = VariableHandler.getNewestImage(5)[0];
-            timer = 0;
-        }
+        PaintImage();
     }
 
+    public void PaintImage()
+    {
+        VariableHandler.updateImages();
+        finishedPaintings = VariableHandler.getNewestImage(5);
+        finishedPaintings.Reverse();
+        UpdateCanvases();
+    }
+
+    private void UpdateCanvases ()
+    {
+        for (int i = 0; i < finishedPaintings.Count; i++)
+        {
+            frames[i].material.mainTexture = finishedPaintings[i];
+        }
+    }
 }

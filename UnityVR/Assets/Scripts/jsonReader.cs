@@ -13,7 +13,7 @@ public class jsonReader : MonoBehaviour
     private JsonData jsonData;
     List<Character> currEmails;
     public TMP_Text headline,fromline,body,prompt,requirements,payment;
-    Character curr;
+    public Character curr;
     bool sam = false, dan = false;
     
 

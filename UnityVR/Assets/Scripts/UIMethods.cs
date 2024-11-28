@@ -11,7 +11,8 @@ public class UIMethods : MonoBehaviour
     public GameObject highlight, imageWindow;
     bool jobLocked = false;
     public Image lastPicture;
-
+    public Texture2D lastTexture;
+    public MeshRenderer lastPicCanvas;
 
     public TMP_Text currencyTxt;
     int currencyVal;
@@ -51,14 +52,25 @@ public class UIMethods : MonoBehaviour
         currencyTxt.text = currencyVal.ToString() + "g";
     }
 
-    private void NewDay()
+    public void NewDay()
     {
+        float fadeTime = 2f;
+        gameObject.GetComponent<BlackoutEvent>().DoFade(fadeTime);
+        StartCoroutine(DoInDarkness(fadeTime));
         jobLocked = true;
         ToggleLock();
     }
 
+    IEnumerator DoInDarkness(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        jReader.accept();
+        CashIn(Mathf.FloorToInt(jReader.curr.Emails[jReader.curr.Progress].Payment));
+    }
+
     public void DisplayNewPicture(Texture2D texture)
     {
+        lastTexture = texture;
         lastPicture.sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0, 0));
     }
 
@@ -68,5 +80,11 @@ public class UIMethods : MonoBehaviour
             tab.SetActive(false);
         }
         panelTabs[num].SetActive(true);
+    }
+
+    public void PicturePasteLatest()
+    {
+        if (lastTexture == null) { return; }
+        lastPicCanvas.material.mainTexture = lastTexture;
     }
 }

@@ -21,16 +21,16 @@ public class BlackoutEvent : MonoBehaviour
         mat.SetFloat("_Brightness", setBright);
     }
 
-    public void DoFade ()
+    public void DoFade (float seconds)
     {
         mat.SetFloat("_Brightness", 1.0f);
-        StartCoroutine(FadeInOut());
+        StartCoroutine(FadeInOut(seconds));
     }
     
-    IEnumerator FadeInOut()
+    IEnumerator FadeInOut(float waitSeconds)
     {
         target = 0.001f;
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(waitSeconds);
         mat.SetFloat("_Brightness", 0.0f);
 
         target = 1.0f;
