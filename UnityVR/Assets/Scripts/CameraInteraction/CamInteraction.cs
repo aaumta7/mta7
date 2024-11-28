@@ -6,6 +6,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class CamInteraction : MonoBehaviour
 {
     public HandleCamera handleCamera;
+    public GetViewcamSnapshot snaphot;
     private void Start()
     {
         XRGrabInteractable grabbable = GetComponent<XRGrabInteractable>();
@@ -15,5 +16,6 @@ public class CamInteraction : MonoBehaviour
     public void TriggerCamera(ActivateEventArgs args)
     {
         handleCamera.Activate();
+        snaphot.GetSnapshot();
     }
 }

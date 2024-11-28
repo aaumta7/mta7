@@ -49,7 +49,6 @@ public class SaveCameraView : MonoBehaviour
                 GameObject.FindObjectOfType<Client>().sendImage();
             }
             drawSkel.DisassembleSkeleton();
-            //GameObject.FindObjectOfType<UpdateCanvas>().PaintNewImage(bytes, resWidth, resHeight);
             snapCam.gameObject.SetActive(false);
         }
         

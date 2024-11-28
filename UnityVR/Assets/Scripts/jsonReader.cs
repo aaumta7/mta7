@@ -68,7 +68,7 @@ public class jsonReader : MonoBehaviour
         {
             curr =  currEmails[index+1];
         }
-
+        displayEmail();
     }
     public void prev()
     {
@@ -81,6 +81,7 @@ public class jsonReader : MonoBehaviour
         {
             curr = currEmails[index - 1];
         }
+        displayEmail();
     }
     public void accept()
     {
@@ -117,9 +118,9 @@ public class jsonReader : MonoBehaviour
         int progress = jsonData.Characters[index].Progress;
 
         headline.text = curr.Emails[progress].Headline;
-        fromline.text = curr.Name;
+        fromline.text = new string ("From: " +curr.Name);
         body.text = curr.Emails[progress].Text;
-        prompt.text = curr.Prompts[progress];
+        prompt.text = new string ("Please paint: \n" + curr.Prompts[progress]);
         string req = curr.Emails[progress].Requirement;
         if (req != null) //sometimes null
         {
@@ -158,13 +159,11 @@ public class jsonReader : MonoBehaviour
         {
             prev();
             Debug.Log("prev");
-            displayEmail();
         }
         if (Input.GetKeyDown(KeyCode.P))
         {
             next();
             Debug.Log("next");
-            displayEmail();
         }
         if (Input.GetKeyDown(KeyCode.L)) 
         {
