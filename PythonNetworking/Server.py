@@ -1,8 +1,7 @@
 import socket
 import sys
 from PIL import Image
-import io
-import os
+from StableDiffusion import stableDiffusion
 
 # Define constants
 RECEIVE_PORT = 12345
@@ -12,7 +11,7 @@ CHUNK_SIZE = 32768
 
 def send_image(ip_address, image_path):
 
-
+    print(ip_address)
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as client:
         client.connect((ip_address, SEND_PORT))
 
@@ -43,6 +42,10 @@ def receive_and_process_image(client_socket):
 
     with open(f"img.png", 'wb') as f:
         f.write(image_data)
+    
+    prompt = str(prompt_bytes,"utf-8")
+    prompt.rstrip('\x00')
+    return prompt
 
 
 
@@ -51,12 +54,13 @@ def run_server(server_ip):
     server_socket.bind((server_ip, RECEIVE_PORT))
     server_socket.listen()
 
-    print(f"Server listening on {server_ip}:{RECEIVE_PORT}")
+    print(f"Server listening on {server_ip}")
 
     while True:
         conn, address = server_socket.accept()
-        receive_and_process_image(conn)
-        send_image(address[0], f"img.png")
+        prompt = receive_and_process_image(conn)    
+        gen = stableDiffusion("img.png",prompt,20)
+        send_image(address[0], gen)
 
 
 if __name__ == "__main__":

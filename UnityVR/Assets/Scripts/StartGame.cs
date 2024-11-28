@@ -5,16 +5,15 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Text;
 
 public class StartGame : MonoBehaviour
 {
     public TMP_Text input;
     public void onClick()
     {
-        using (StreamWriter writer = new StreamWriter(VariableHandler.ipFile))
-        {
-            writer.Write(input.text);
-        }
+        string outputString = input.text.Replace("\u200B", "");
+        File.WriteAllText(VariableHandler.ipFile,outputString);
         SceneManager.LoadScene(1);
     }
     void Start()
