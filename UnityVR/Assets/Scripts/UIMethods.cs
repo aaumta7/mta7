@@ -17,6 +17,9 @@ public class UIMethods : MonoBehaviour
     public TMP_Text currencyTxt;
     int currencyVal;
 
+    public TMP_Text weekText;
+    int weekTime = 1;
+
     public GameObject[] panelTabs;
 
     public bool sendImageToServer = true;
@@ -54,6 +57,12 @@ public class UIMethods : MonoBehaviour
         currencyTxt.text = currencyVal.ToString() + "g";
     }
 
+    public void UpdateWeekCount ()
+    {
+        weekTime++;
+        weekText.text = new string ("Week " + weekTime.ToString());
+    }
+
     public void NewDay()
     {
         float fadeTime = 2f;
@@ -73,6 +82,7 @@ public class UIMethods : MonoBehaviour
         yield return new WaitForSeconds(seconds);
         jReader.accept();
         CashIn(Mathf.FloorToInt(jReader.curr.Emails[jReader.curr.Progress].Payment));
+        UpdateWeekCount();
     }
 
     public void DisplayNewPicture(Texture2D texture)
