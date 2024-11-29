@@ -13,12 +13,7 @@ using UnityEngine;
 public class Server : MonoBehaviour
 {
 
-
     public int port = 54321; // Standard for reciving C#
-
-
-
-
     TcpListener listener;
     IPAddress serverIP = getLocal();
 
@@ -28,8 +23,19 @@ public class Server : MonoBehaviour
         //for local testing
         //serverIP = IPAddress.Parse("127.0.0.1");
 
-        Debug.Log(serverIP.ToString());
-        listener = new TcpListener(serverIP,port);
+        if (File.ReadAllText(VariableHandler.ipFile)== "127.0.0.1")
+        {
+            listener = new TcpListener(IPAddress.Parse("127.0.0.1"), port);
+            Debug.Log("127.0.0.1");
+        }
+        else
+        {
+            listener = new TcpListener(serverIP, port);
+            Debug.Log(serverIP.ToString());
+        }
+
+
+
         listener.Start();
         Debug.Log("started");
     }
