@@ -44,10 +44,6 @@ public class SaveCameraView : MonoBehaviour
             System.IO.File.WriteAllBytes(VariableHandler.imageFolderPath +"/img.png", bytes);
             Debug.Log("worked");
 
-            if (sendImageToServer)
-            {
-                GameObject.FindObjectOfType<Client>().sendImage();
-            }
             drawSkel.DisassembleSkeleton();
             snapCam.gameObject.SetActive(false);
         }

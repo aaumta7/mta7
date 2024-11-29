@@ -19,6 +19,8 @@ public class UIMethods : MonoBehaviour
 
     public GameObject[] panelTabs;
 
+    public bool sendImageToServer = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -59,6 +61,11 @@ public class UIMethods : MonoBehaviour
         StartCoroutine(DoInDarkness(fadeTime));
         jobLocked = true;
         ToggleLock();
+
+        if (sendImageToServer)
+        {
+            GameObject.FindObjectOfType<Client>().sendImage();
+        }
     }
 
     IEnumerator DoInDarkness(float seconds)
