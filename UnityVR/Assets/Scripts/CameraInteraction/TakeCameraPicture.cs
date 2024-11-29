@@ -7,8 +7,6 @@ public class SaveCameraView : MonoBehaviour
     public Camera snapCam;
     private DrawSkeleton drawSkel;
 
-    public bool sendImageToServer = true;
-
     int resWidth = 512;//256;
     int resHeight = 512;//256;
     private void Awake()
