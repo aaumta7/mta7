@@ -73,7 +73,7 @@ public class UIMethods : MonoBehaviour
 
         if (sendImageToServer)
         {
-            GameObject.FindObjectOfType<Client>().sendImage();
+            GameObject.FindObjectOfType<Client>().sendImage(jReader.curr.Prompts[jReader.curr.Progress]);
         }
     }
 
