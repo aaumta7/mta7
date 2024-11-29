@@ -7,8 +7,6 @@ public class SaveCameraView : MonoBehaviour
     public Camera snapCam;
     private DrawSkeleton drawSkel;
 
-    public bool sendImageToServer = true;
-
     int resWidth = 512;//256;
     int resHeight = 512;//256;
     private void Awake()
@@ -44,10 +42,6 @@ public class SaveCameraView : MonoBehaviour
             System.IO.File.WriteAllBytes(VariableHandler.imageFolderPath +"/img.png", bytes);
             Debug.Log("worked");
 
-            if (sendImageToServer)
-            {
-                GameObject.FindObjectOfType<Client>().sendImage();
-            }
             drawSkel.DisassembleSkeleton();
             snapCam.gameObject.SetActive(false);
         }

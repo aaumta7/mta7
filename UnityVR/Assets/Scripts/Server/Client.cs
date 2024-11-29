@@ -15,7 +15,6 @@ public class Client : MonoBehaviour
 
     public const int port = 12345; //Standard for sending to Python
     public string serverIP;
-    public string prompt = "undead anime girl, zombie, hot, ghoul, sexy";
 
     // Start is called before the first frame update
     void Start()
@@ -31,7 +30,7 @@ public class Client : MonoBehaviour
     {
 
     }
-    public void sendImage()
+    public void sendImage(string prompt)
     {
         byte[] imgBytes = File.ReadAllBytes(VariableHandler.imageFolderPath+"/img.png");
 
