@@ -1971,9 +1971,9 @@ MonoBehaviour:
     5. Send the picture to your canvas
 
     6.
-    Wait for the results
+    Repeat from step 1 while you wait for the results
 
-    7. Profit!'
+    7. Parmesan Profit!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

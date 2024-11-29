@@ -14,6 +14,7 @@ public class jsonReader : MonoBehaviour
     List<Character> currEmails;
     public TMP_Text headline,fromline,body,prompt,requirements,payment;
     public Character curr;
+    [SerializeField]
     bool sam = false, dan = false;
     
 
@@ -97,25 +98,40 @@ public class jsonReader : MonoBehaviour
         {
             dan = true;
         }
-
-        int prog = jsonData.Characters[jsonData.Characters.ToList().IndexOf(curr)].Progress;
-        prog++;
-        jsonData.Characters[jsonData.Characters.ToList().IndexOf(curr)].Progress = prog;
-        if (prog == jsonData.Characters[jsonData.Characters.ToList().IndexOf(curr)].Emails.Length)
+        int prog = 0;
+        if (curr.Name == "Samantha and Daniel")
         {
-            List<Character> c = jsonData.Characters.ToList();
-            c.Remove(curr);
+            Array.Resize(ref jsonData.Characters, jsonData.Characters.Length - 1);
+        } else
+        {
+            prog = jsonData.Characters[jsonData.Characters.ToList().IndexOf(curr)].Progress;
+            prog++;
+            jsonData.Characters[jsonData.Characters.ToList().IndexOf(curr)].Progress = prog;
 
-            jsonData.Characters = c.ToArray();
+            if (prog == jsonData.Characters[jsonData.Characters.ToList().IndexOf(curr)].Emails.Length)
+            {
+                List<Character> c = jsonData.Characters.ToList();
+                c.Remove(curr);
+
+                jsonData.Characters = c.ToArray();
+            }
         }
 
         load();
     }
     void displayEmail()
-    {      
-        int index = jsonData.Characters.ToList().IndexOf(curr);
+    {    
+
+
+        //int index = jsonData.Characters.ToList().IndexOf(curr);
+        int index = currEmails.IndexOf(curr);
+        Debug.Log("Index: " + index + "\nCurrent emails: " +
+            currEmails.Count);
+
         System.Random random = new System.Random();
-        int progress = jsonData.Characters[index].Progress;
+        //int progress = jsonData.Characters[index].Progress;
+        int progress = currEmails[index].Progress;
+
 
         headline.text = curr.Emails[progress].Headline;
         fromline.text = new string ("From: " +curr.Name);
@@ -158,17 +174,14 @@ public class jsonReader : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.O))
         {
             prev();
-            Debug.Log("prev");
         }
         if (Input.GetKeyDown(KeyCode.P))
         {
             next();
-            Debug.Log("next");
         }
         if (Input.GetKeyDown(KeyCode.L)) 
         {
             accept();
-                Debug.Log(sam.ToString() + dan.ToString());
         }
     }
 
