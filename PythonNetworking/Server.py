@@ -1,7 +1,7 @@
 import socket
 import sys
 from PIL import Image
-from StableDiffusion import stableDiffusion
+from StableDiffusion import stableDiffusion,makePipe
 
 # Define constants
 RECEIVE_PORT = 12345
@@ -50,6 +50,8 @@ def receive_and_process_image(client_socket):
 
 
 def run_server(server_ip):
+    pipe= makePipe()
+    
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     server_socket.bind((server_ip, RECEIVE_PORT))
     server_socket.listen()
@@ -59,7 +61,7 @@ def run_server(server_ip):
     while True:
         conn, address = server_socket.accept()
         prompt = receive_and_process_image(conn)    
-        gen = stableDiffusion("img.png",prompt,20)
+        gen = stableDiffusion("img.png",prompt,20,pipe)
         send_image(address[0], gen)
 
 

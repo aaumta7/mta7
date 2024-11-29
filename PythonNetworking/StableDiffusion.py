@@ -6,7 +6,7 @@ from diffusers import StableDiffusionControlNetPipeline
 from diffusers import ControlNetModel
 from diffusers import UniPCMultistepScheduler
 
-def stableDiffusion(pathToImage,prompt,steps):
+def stableDiffusion(pathToImage,prompt,steps,pipe):
     try:
         # Load the image from the provided path
         image = Image.open(pathToImage)
@@ -15,21 +15,8 @@ def stableDiffusion(pathToImage,prompt,steps):
         return None
 
     # Resize image to the desired size
-    newsize = (1024, 1024)
+    newsize = (512, 512)
     image = image.resize(newsize)
-    
-    print(f"Image loaded and resized: {image}")
-
-    # Initialize the ControlNet model and pipeline
-    controlnet = ControlNetModel.from_pretrained(
-        "lllyasviel/sd-controlnet-openpose", torch_dtype=torch.float16
-    )
-    
-    pipe = StableDiffusionControlNetPipeline.from_pretrained(
-        "runwayml/stable-diffusion-v1-5", controlnet=controlnet, safety_checker=None, torch_dtype=torch.float16
-    )
-    
-    pipe.scheduler = UniPCMultistepScheduler.from_config(pipe.scheduler.config)
     
     # Remove if you do not have xformers installed
     # pipe.enable_xformers_memory_efficient_attention()
@@ -50,3 +37,19 @@ def stableDiffusion(pathToImage,prompt,steps):
     image_out.save(output_image_path)
     
     return output_image_path
+
+def makePipe():
+
+
+    # Initialize the ControlNet model and pipeline
+    controlnet = ControlNetModel.from_pretrained(
+        "lllyasviel/sd-controlnet-openpose", torch_dtype=torch.float16
+    )
+    
+    pipe = StableDiffusionControlNetPipeline.from_pretrained(
+        "runwayml/stable-diffusion-v1-5", controlnet=controlnet, safety_checker=None, torch_dtype=torch.float16
+    )
+    
+    pipe.scheduler = UniPCMultistepScheduler.from_config(pipe.scheduler.config)
+
+    return pipe
