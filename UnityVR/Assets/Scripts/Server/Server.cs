@@ -89,11 +89,11 @@ public class Server : MonoBehaviour
         }
 
         //clients.Remove(client);
-        client.Close();
+
 
         VariableHandler.largest++;
         File.WriteAllBytes(VariableHandler.imageFolderPath +"/Images/"+ VariableHandler.largest.ToString() + ".png", imgData);
-        GameObject.FindObjectOfType<UpdateCanvas>().PaintImage();
+        client.Close();
         return;
     }
     static IPAddress getLocal()
