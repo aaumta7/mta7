@@ -799,6 +799,8 @@ MonoBehaviour:
     Progress: 0
     Prompts: []
     Emails: []
+  sam: 0
+  dan: 0
 --- !u!114 &7796451080486435871
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -21,7 +21,7 @@ public class UpdateCanvas : MonoBehaviour
             VariableHandler.updateImages();
 
             // Parameter should be -1 from amount of frames
-            finishedPaintings = VariableHandler.getNewestImage(11);
+            finishedPaintings = VariableHandler.getNewestImage(10);
 
             if (reverse)
             {
