@@ -7,6 +7,7 @@ public class UpdateCanvas : MonoBehaviour
 {
     public MeshRenderer[] frames;
     public List<Texture2D> finishedPaintings = new List<Texture2D>();
+    public bool reverse = true;
 
     private void Start()
     {
@@ -19,7 +20,11 @@ public class UpdateCanvas : MonoBehaviour
 
         // Parameter should be -1 from amount of frames
         finishedPaintings = VariableHandler.getNewestImage(11);
-        finishedPaintings.Reverse();
+
+        if (reverse)
+        {
+            finishedPaintings.Reverse();
+        }
         UpdateCanvases();
     }
 
