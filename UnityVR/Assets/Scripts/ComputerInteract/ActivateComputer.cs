@@ -6,6 +6,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class ActivateComputer : MonoBehaviour
 {
     public GameObject computerUI;
+    public GameObject flashyLight;
 
 
     private void Start()
@@ -19,6 +20,7 @@ public class ActivateComputer : MonoBehaviour
         if (computerUI != null)
         {
             computerUI.SetActive(!computerUI.activeSelf);
+            flashyLight.SetActive(!flashyLight.activeSelf);
         }
     }
 }
