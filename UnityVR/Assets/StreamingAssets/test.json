@@ -149,19 +149,6 @@
             "Payment": 15.0
           }
         ]
-      },
-      {
-        "Name": "Samantha and Daniel",
-        "Progress": 0,
-        "Prompts": [ "Wedding picture of a bride and a groom, happy, excited, love, flowers." ],
-        "Emails": [
-          {
-            "Headline": "We are getting married!!",
-            "Text": "Hello!!! It’s Samantha (but also Daniel). \nI didn’t know Daniel had been writing with you too!?!? He always talked about how he really liked art, so I showed him the paintings you made for me, and he showed me the paintings you did for him - we were both so surprised, but it was so funny! Anyways, we have been great since last time we wrote. So great that we are actually GETTING MARRIED!! We are very excited and could not think of a better way to celebrate than commission another painting from you of both of us. We want a painting that symbolizes our new beginnings and happiness together. \nP.S you are invited to the wedding! (invitation arriving soon) \nP.P.S. my EVIL stepmother will NOT be attending!",
-            "Payment": 100.0,
-            "Requirement": "this is an optional requirement"
-          }
-        ]
       }
       
 ]}

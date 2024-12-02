@@ -14,8 +14,6 @@ public class jsonReader : MonoBehaviour
     List<Character> currEmails;
     public TMP_Text headline,fromline,body,prompt,requirements,payment;
     public Character curr;
-    [SerializeField]
-    bool sam = false, dan = false;
     
 
     List<Character> newEmails()
@@ -45,15 +43,6 @@ public class jsonReader : MonoBehaviour
         else
         {
             characters = jsonData.Characters.ToList();
-        }
-
-
-        if (sam && dan)
-        {
-            characters.Add(jsonData.Characters[jsonData.Characters.Length - 1]);
-            List<Character> c = jsonData.Characters.ToList();
-            c.Remove(jsonData.Characters[jsonData.Characters.Length-1]);
-            jsonData.Characters = c.ToArray();
         }
 
         return characters;
@@ -90,32 +79,19 @@ public class jsonReader : MonoBehaviour
         {
             jsonData.Characters[jsonData.Characters.ToList().IndexOf(curr)].Name = "Samantha";
         }
-        if (curr.Name == "Samantha" && curr.Progress == 3)
-        {
-            sam = true;
-        }
-        if (curr.Name == "Daniel" && curr.Progress == 3)
-        {
-            dan = true;
-        }
         int prog = 0;
-        if (curr.Name == "Samantha and Daniel")
-        {
-            Array.Resize(ref jsonData.Characters, jsonData.Characters.Length - 1);
-        } else
-        {
-            prog = jsonData.Characters[jsonData.Characters.ToList().IndexOf(curr)].Progress;
-            prog++;
-            jsonData.Characters[jsonData.Characters.ToList().IndexOf(curr)].Progress = prog;
+        prog = jsonData.Characters[jsonData.Characters.ToList().IndexOf(curr)].Progress;
+        prog++;
+        jsonData.Characters[jsonData.Characters.ToList().IndexOf(curr)].Progress = prog;
 
-            if (prog == jsonData.Characters[jsonData.Characters.ToList().IndexOf(curr)].Emails.Length)
-            {
-                List<Character> c = jsonData.Characters.ToList();
-                c.Remove(curr);
+        if (prog == jsonData.Characters[jsonData.Characters.ToList().IndexOf(curr)].Emails.Length)
+        {
+            List<Character> c = jsonData.Characters.ToList();
+            c.Remove(curr);
 
-                jsonData.Characters = c.ToArray();
-            }
+            jsonData.Characters = c.ToArray();
         }
+        
 
         load();
     }
@@ -210,12 +186,12 @@ public class jsonReader : MonoBehaviour
     }
     void finish()
     {
-        headline.text = "finish";
-        fromline.text = "finish";
-        body.text = "finish";
-        prompt.text = "finish";
-        requirements.text = "finish";
-        payment.text = "finish";
+        headline.text = "We are getting married!!";
+        fromline.text = "Samantha and Daniel";
+        body.text = "Hello!!! It’s Samantha (but also Daniel). \nI didn’t know Daniel had been writing with you too!?!? He always talked about how he really liked art, so I showed him the paintings you made for me, and he showed me the paintings you did for him - we were both so surprised, but it was so funny! Anyways, we have been great since last time we wrote. So great that we are actually GETTING MARRIED!! We are very excited and could not think of a better way to celebrate than commission another painting from you of both of us. We want a painting that symbolizes our new beginnings and happiness together. \nP.S you are invited to the wedding! (invitation arriving soon) \nP.P.S. my EVIL stepmother will NOT be attending!";
+        prompt.text = "Wedding picture of a bride and a groom, happy, excited, love, flowers.";
+        requirements.text = "";
+        payment.text = "100 grams of parmesan";
     }
 
 
