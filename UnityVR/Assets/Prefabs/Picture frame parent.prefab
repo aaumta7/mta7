@@ -68,6 +68,10 @@ MonoBehaviour:
   - {fileID: 6077551360700975377}
   - {fileID: 6256661244339040511}
   finishedPaintings: []
+  reverse: 1
+  soundPrefab: {fileID: 6513464112292529603, guid: a9329af5b49823c49b3171289854c872,
+    type: 3}
+  dingDing: {fileID: 8300000, guid: 2dd5909103781f7439b64395da600e87, type: 3}
 --- !u!1001 &372745957071205405
 PrefabInstance:
   m_ObjectHideFlags: 0
