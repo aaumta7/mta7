@@ -3,7 +3,7 @@
       {
         "Name": "Sam",
         "Progress": 0,
-        "Prompts": [ "Very depressive, sad, crying, messy, red, and distraught, with tears streaming down their flushed face, hair tangled, and shoulders trembling in despair.", "Someone breaking free of chains, experiencing freedom, a flower field, their face radiant with joy, arms stretched wide as petals scatter in the breeze.", "Person walking on a road, dark forest, towards a bright, open field with flowers, their silhouette glowing faintly as sunlight streams through the trees.", "Yearning for love, thinking about him, smiling, hearts, pink, girly, with soft blush on her cheeks and eyes sparkling with daydreams of affection." ],
+        "Prompts": [ "Very depressive, sad, crying, messy, red, and distraught.", "Someone breaking free of chains, experiencing freedom, a flower field.", "Person walking on a road, dark forest, towards a bright, open field with flowers.", "Yearning for love, thinking about him, smiling, hearts, pink, girly." ],
         "Emails": [
           {
             "Headline": "Expressive and distraught painting",
@@ -31,7 +31,7 @@
       {
         "Name": "Daniel",
         "Progress": 0,
-        "Prompts": [ "A middle-aged woman with brown hair and bright eyes sitting for her portrait in a cozy chair smiling slightly. Bittersweet and soft lighting; she wears a flowing green dress with delicate embroidery along the sleeves.", "A statue of a person sitting down, reflecting on something, deep in thought, their head resting gently on one hand, with intricate details carved into the folds of their clothing.", "A young man with brown hair petting an orange cat, wearing a soft gray sweater. He is smiling and looking joyful.", "A young man with brown hair lying in bed, smiling, dreaming about love, he has a relaxed expression and slightly flushed cheeks." ],
+        "Prompts": [ "A middle-aged woman with brown hair and bright eyes sitting for her portrait in a cozy chair smiling slightly. Bittersweet and soft lighting.", "A statue of a person sitting down, reflecting on something, deep in thought.", "A young man with brown hair petting an orange cat.", "A young man with brown hair lying in bed, smiling, dreaming about love." ],
         "Emails": [
           {
             "Headline": "Portrait of my mum",
@@ -59,7 +59,7 @@
       {
         "Name": "Peter",
         "Progress": 0,
-        "Prompts": [ "Image of a pirate jumping in the air on a ship going around a blue ocean, with a bright red bandana, a gleaming sword raised high, and waves splashing against the hull.", "A pirate standing up to a great foe of the corrupt government, his eyes fierce with determination, a sword drawn, and a tattered coat billowing in the wind.", "The pirate has achieved his final dream and is on his knees after losing his friend to achieve his dream, tears in his eyes as the weight of his sacrifice sinks in.", "A pirate waving goodbye as he goes on an adventure, his hand raised in farewell to friends, a determined look in his eyes as he steps out the door into the unknown." ],
+        "Prompts": [ "Image of a pirate jumping in the air on a ship going around a blue ocean.", "A pirate standing up to a great foe of the corrupt government", "The pirate has achieved his final dream and is on his knees after losing his friend to achieve his dream.", "A pirate waving goodbye as he goes on an adventure waving goodbye to his friends as he walks out a door." ],
         "Emails": [
           {
             "Headline": "Pirates and freedom",
@@ -87,7 +87,7 @@
       {
         "Name": "Lucas",
         "Progress": 0,
-        "Prompts": [ "A man, working in a woodworker shop, his hands skillfully shaping wood, surrounded by tools and the scent of fresh pine, focused on his craft with a quiet determination.", "A carpenter walking across the street from the side, pedestrian crossing, smiling brightly, his tool belt bouncing with each cheerful step.", "A large, male burglar, big, bulky, ugly, scary-looking monster guy, tall and broad-shouldered, with a scruffy beard, dark clothes, and a mask.", "A female lawyer in a striking accusing pose, her sharp eyes focused, hands raised with authority, and her tailored suit exuding confidence as she challenges the courtroom.","A happy carpenter, dancing closely with his beloved handsaw, his face lit up with joy, spinning around in a carefree rhythm as wood shavings fall around him." ],
+        "Prompts": [ "A man, working in a woodworker shop", "A carpenter walking across the street from the side", "A large male burglar", "A female lawyer in a striking accusing pose","A happy carpenter, dancing closely with his beloved handsaw" ],
         "Emails": [
           {
             "Headline": "Carpenter Lucas, looking for a self portrait",
@@ -120,7 +120,7 @@
       {
         "Name": "Emily",
         "Progress": 0,
-        "Prompts": [ "A flying forest fairy with delicate, translucent wings shimmering in the sunlight, her blonde hair cascading down, wearing a soft pink flower dress made of petals and vines!", "A man playing tennis, his focused expression intense as he swings his racket, wearing a white athletic shirt and shorts, with short brown hair, a strong build, and a confident stance.", "A ballerina wearing colorful clothes, her flowing skirt in vibrant shades of pink, blue, and yellow, her graceful movements as she spins with elegance, her hair tied in a neat bun.", "A cowboy riding a horse, wearing a wide-brimmed hat and a weathered leather jacket, his strong posture as he grips the reins, with dust swirling in the golden sunset.", "My mom in a cool pose as a superhero, wearing a vibrant cape, her fists confidently clenched, her expression determined, with a bold, fearless stance against a bright sky!" ],
+        "Prompts": [ "A Flying Forest Fairy!", "A Man Playing Tennis.", "A Ballerina Wearing Colorful Clothes.", "A Cowboy Riding A Horse.", "My mom in a cool pose as a superhero!" ],
         "Emails": [
           {
             "Headline": "Daughter’s Birthday Gift",
