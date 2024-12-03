@@ -83,6 +83,7 @@ public class UIMethods : MonoBehaviour
         jReader.accept();
         CashIn(Mathf.FloorToInt(jReader.curr.Emails[jReader.curr.Progress].Payment));
         UpdateWeekCount();
+        lastPicture.sprite = null;
     }
 
     public void DisplayNewPicture(Texture2D texture)

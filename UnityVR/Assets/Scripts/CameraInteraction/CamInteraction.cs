@@ -7,6 +7,9 @@ public class CamInteraction : MonoBehaviour
 {
     public HandleCamera handleCamera;
     public GetViewcamSnapshot snaphot;
+    public GameObject sfxPrefab;
+    public AudioClip kachew;
+
     private void Start()
     {
         XRGrabInteractable grabbable = GetComponent<XRGrabInteractable>();
@@ -17,5 +20,7 @@ public class CamInteraction : MonoBehaviour
     {
         handleCamera.Activate();
         snaphot.GetSnapshot();
+        GameObject sfx = Instantiate(sfxPrefab, transform.position, Quaternion.identity);
+        sfx.GetComponent<SFXPlayer>().PlaySound(kachew);
     }
 }

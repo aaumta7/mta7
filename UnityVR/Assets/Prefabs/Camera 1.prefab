@@ -693,6 +693,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   handleCamera: {fileID: 6060129300183208494}
   snaphot: {fileID: 4420673770507177005}
+  sfxPrefab: {fileID: 6513464112292529603, guid: a9329af5b49823c49b3171289854c872,
+    type: 3}
+  kachew: {fileID: 8300000, guid: 693589bc3bc4fc74f944e4ebf29eacc4, type: 3}
 --- !u!114 &6060129300183208494
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -953,4 +956,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   snapCam: {fileID: 5344465575928202806}
-  sendImageToServer: 1

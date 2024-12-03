@@ -15,6 +15,6 @@ public class SFXPlayer : MonoBehaviour
     {
         source.clip = sound;
         source.Play();
-        Destroy(gameObject, sound.length);
+        Destroy(gameObject, sound.length + 1f);
     }
 }
