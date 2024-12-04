@@ -6,6 +6,7 @@ using System.Linq;
 using UnityEngine;
 using System.Drawing;
 using UnityEngine.Rendering;
+using Unity.VisualScripting;
 
 public static class VariableHandler
 {
@@ -14,6 +15,8 @@ public static class VariableHandler
     public static string documentsFolderPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "/" + folderName;
     public static string ipFile = imageFolderPath + "/ip.txt";
     public static int largest = 0;
+
+    public static Dictionary<String, float> manequinnInteractionData = new Dictionary<String, float>();
     public static void updateImages()
     {
         foreach (string s in Directory.GetFiles(imageFolderPath+"/Images").Select(Path.GetFileNameWithoutExtension).ToList())

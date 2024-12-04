@@ -22,7 +22,7 @@ public class UpdateCanvas : MonoBehaviour
         finishedPaintings = VariableHandler.getNewestImage(10);
         paintingsCount = finishedPaintings.Count;
         oldPaintCount = paintingsCount;
-        Debug.Log("New Count: " + paintingsCount + "\nOld Count: " + oldPaintCount);
+        //Debug.Log("New Count: " + paintingsCount + "\nOld Count: " + oldPaintCount);
     }
     void Update(){
         timer += Time.deltaTime;
